@@ -58,11 +58,11 @@ function Loading(props) {
         });
     }
     getApi();
-  }, [longitude, latitude]);
+  }, [longitude, latitude, weatherData]);
 
   useEffect(() => {
     if (weatherData.cod === 200) {
-      props.navigation.navigate('Location', {
+      props.navigation.replace('Location', {
         weatherData: weatherData,
       });
     } 
